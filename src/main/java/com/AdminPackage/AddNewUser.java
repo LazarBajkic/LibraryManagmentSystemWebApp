@@ -26,13 +26,16 @@ public class AddNewUser extends HttpServlet {
 		String ValidUntil = request.getParameter("validUntil");
 		
 		try {
+			
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Library","root","Ceramida");
 			PreparedStatement st = con.prepareStatement("Insert into users Values (?,?,?,?)");
-			st.setString(1, newUserID);
-			st.setString(2, newUserName);
-			st.setString(3, Issued);
-			st.setString(4, ValidUntil);
+			
+				st.setString(1, newUserID);
+				st.setString(2, newUserName);
+				st.setString(3, Issued);
+				st.setString(4, ValidUntil);
+			
 			int execute = st.executeUpdate();
 			
 			RequestDispatcher rd = request.getRequestDispatcher("AdminPage.jsp");

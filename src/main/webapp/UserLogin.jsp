@@ -4,18 +4,40 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="HomePageStyle.css">
+<title>User Login</title>
 </head>
 <body>
 	
+	<%
+	
+	response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
+	
+	%>
+	
+	<div class="HomePage">
+	<div class="centered-content">
+	
+	<h2>Input credentials</h2>
+	
 	<form action="ULogin" method="post">
 	
-	Enter ID:<input type="text" name="uname"><br>
-	Enter User name:<input type="text" name = "uID"><br>
+	Enter your ID:<input type="text" name="uname">
 	
-	<input type="submit" value="Login">
+	<br>
+	<br>
+	
+	Enter your user name:<input type="text" name = "uID">
+	
+	<br>
+	<br>
+	
+	<input type="submit" class="roundButton" value="Login">
 
 	</form>
+	
+	</div>
+	</div>
 	
 </body>
 </html>

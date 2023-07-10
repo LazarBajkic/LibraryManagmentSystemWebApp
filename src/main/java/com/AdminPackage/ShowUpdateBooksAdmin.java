@@ -35,6 +35,7 @@ public class ShowUpdateBooksAdmin extends HttpServlet {
 			ResultSet rs = st.executeQuery("Select bookName,dateRented,returnDate from BorrowedBooks");
 			
 			while(rs.next()) {
+				
 				Book book = new Book();
 				book.setBookName(rs.getString("bookName"));
 				book.setDateBorrowed(rs.getString("dateRented"));

@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,6 +28,7 @@ public class CheckUserCreds extends HttpServlet {
 		UserDao uDao = new UserDao();
 		
 		try {
+			
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Library","root","Ceramida");
 			Statement st = con.createStatement();
@@ -39,14 +41,20 @@ public class CheckUserCreds extends HttpServlet {
 					List<Book> bookList = SBU.getUserBooks();
 					
 				HttpSession sess = request.getSession();
+				
 				sess.setAttribute("uname", uname);
 				sess.setAttribute("uID", uID);
 				sess.setAttribute("bookList", bookList);
-				response.sendRedirect("UserPage.jsp");
 				
-			}else{
-				response.sendRedirect("UserLogin.jsp");
 			}
+			
+			response.sendRedirect("UserPage.jsp");
+			
+			}
+			else
+			{
+				
+			response.sendRedirect("UserLogin.jsp");
 			
 		}
 			
@@ -55,5 +63,6 @@ public class CheckUserCreds extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
+	
 	}
 		

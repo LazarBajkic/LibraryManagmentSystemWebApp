@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+
+body{
+	background-color:white
+}
+
+.AdminAndUserStyle{
+	
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  height: 20vh;
+  flex-direction: row;
+	
+}
+
+.actionsDiv{
+	color: green;
+	font-weight: bold;
+	width: 300px;
+	padding-left: 30px;
+	margin-bottom: 40px;
+	flex-direction: column;
+}
+
+.roundButton{
+	
+	border-radius:50%;
+	background-color:lime;
+	color: white;
+	padding:10px 20px;
+	border: none;
+	text-align: center;
+	display: inline-block;
+	font-size: 14px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	
+}
+
+.roundButton:hover{
+	color: lime;
+	background-color: gray
+}
+ 
+

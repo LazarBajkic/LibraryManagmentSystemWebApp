@@ -44,10 +44,12 @@ public class UserDao {
 		Book newbook = new Book();
 		
 		try {
+			
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection(url,username,password);
 			Statement st = con.createStatement();
 			st.executeUpdate("Insert into BorrowedBooks Values('"+bookName+"','"+dateBorrowed+"','"+returnDate+"')");
+		
 		}catch(Exception e) {
 			System.out.println(e);
 		}

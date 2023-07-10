@@ -12,34 +12,33 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class AddNewAdmin
+ * Servlet implementation class RemoveAdmin
  */
-public class AddNewAdmin extends HttpServlet {
-
+public class RemoveAdmin extends HttpServlet {
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String adminID = request.getParameter("newAdminID");
-		String adminUsername = request.getParameter("newAdminName");
-		String startedWorking = request.getParameter("StartedWorking");
+		String deleteAdminUsername = request.getParameter("deleteAName");
+		String deleteAdminID = request.getParameter("deleteAID");
 		
 		try {
-		
+			
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Library","root","Ceramida");
-			PreparedStatement st = con.prepareStatement("Insert into admins values(?,?,?)");
+			PreparedStatement st = con.prepareStatement("Delete from admins where Name=? AND ID=?");
 			
-				st.setString(1, adminID);
-				st.setString(2, adminUsername);
-				st.setString(3, startedWorking);
+				st.setString(1, deleteAdminUsername);
+				st.setString(2, deleteAdminID);
 			
-			int execute = st.executeUpdate();
+			int i = st.executeUpdate();
 			
 			RequestDispatcher rd = request.getRequestDispatcher("AdminPage.jsp");
-			rd.forward(request, response);
+			rd.forward(request,response);
 			
 		}catch(Exception e) {
-			
+			e.printStackTrace();
 		}
+		
 	}
 
 }

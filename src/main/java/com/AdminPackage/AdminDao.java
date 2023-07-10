@@ -15,8 +15,8 @@ public class AdminDao {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Library","root","Ceramida");
 			PreparedStatement st = con.prepareStatement("Select ID,Name from admins where ID=? AND Name=?");
 			
-			st.setString(2, uname);
-			st.setString(1, ID);
+				st.setString(2, uname);
+				st.setString(1, ID);
 			
 			ResultSet rs = st.executeQuery();
 			

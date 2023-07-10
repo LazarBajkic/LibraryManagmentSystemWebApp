@@ -82,6 +82,24 @@
   	<description></description>
   	<servlet-class>com.AdminPackage.AddNewAdmin</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Logout</servlet-name>
+  	<display-name>Logout</display-name>
+  	<description></description>
+  	<servlet-class>com.Logout</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>RemoveUser</servlet-name>
+  	<display-name>RemoveUser</display-name>
+  	<description></description>
+  	<servlet-class>com.AdminPackage.RemoveUser</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>RemoveAdmin</servlet-name>
+  	<display-name>RemoveAdmin</display-name>
+  	<description></description>
+  	<servlet-class>com.AdminPackage.RemoveAdmin</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>UserCreditRedirect</servlet-name>
   	<url-pattern>/LoginUser</url-pattern>
@@ -133,5 +151,17 @@
   <servlet-mapping>
   	<servlet-name>AddNewAdmin</servlet-name>
   	<url-pattern>/addNewAdmin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Logout</servlet-name>
+  	<url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RemoveUser</servlet-name>
+  	<url-pattern>/removeUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RemoveAdmin</servlet-name>
+  	<url-pattern>/removeAdmin</url-pattern>
   </servlet-mapping>
 </web-app>

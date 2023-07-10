@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+h2{
+
+	Color: green;
+	
+}
+
+.HomePage {
+  
+  color: green;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+
+}
+
+.centered-content {
+  
+  width: 200px; 
+
+}
+
+.roundButton{
+	
+	border-radius:50%;
+	background-color:lime;
+	color: white;
+	padding:10px 20px;
+	border: none;
+	text-align: center;
+	display: inline-block;
+	font-size: 14px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	
+}
+
+.roundButton:hover{
+	color: lime;
+	background-color: gray
+}
+
+

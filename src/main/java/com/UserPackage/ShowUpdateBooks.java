@@ -22,19 +22,13 @@ import javax.servlet.http.HttpSession;
  */
 public class ShowUpdateBooks extends HttpServlet {
 	
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-  
-
-	/*
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+   
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		List<Book> books = new ArrayList<Book>();
 		
 		try {
+			 
 			 Class.forName("com.mysql.jdbc.Driver");
 			 
 			 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Library","root","Ceramida");
@@ -42,6 +36,7 @@ public class ShowUpdateBooks extends HttpServlet {
 			 ResultSet rs = st.executeQuery("Select bookName,dateRented,returnDate from BorrowedBooks");
 			
 			while(rs.next()) {
+				
 				Book book = new Book();
 				book.setBookName(rs.getString("bookName"));
 				book.setDateBorrowed(rs.getString("dateRented"));

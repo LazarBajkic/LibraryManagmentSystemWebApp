@@ -48,10 +48,11 @@ public class AdminCredCheck extends HttpServlet {
 					sess.setAttribute("adminUsername", adminUsername);
 					sess.setAttribute("adminID", adminID);
 					sess.setAttribute("bookList", bookList);
-					response.sendRedirect("AdminPage.jsp");
-				}else {
-					response.sendRedirect("AdminLogin.jsp");
-				}
+				
+				}response.sendRedirect("AdminPage.jsp");
+			}else {
+				response.sendRedirect("AdminLogin.jsp");
+
 				
 			}
 		} catch (ClassNotFoundException e) {

@@ -4,20 +4,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Local Library Home Page</title>
+<link rel="stylesheet" type="text/css" href="HomePageStyle.css">
 </head>
 <body>
+	
 
-<form action="LoginUser">
- <h3>Login as a user:</h3><br>
- <input type="submit" value="Login">
- </form>
+	<div class="HomePage">
+	<div class="centered-content">
+
+	<form action="LoginUser">
+ 		<h1>Login as a user:</h1><br>
+ 		<input type="submit" value="Login">
+ 	</form>
  
- <form action="LoginAdmin">
- <h3>Login as an administrator:</h3><br>
- <input type="submit" value="Login">
- </form>
-
+ 	<form action="LoginAdmin">
+ 		<h1>Login as an administrator:</h1><br>
+ 		<input type="submit" value="Login">
+	</form>
+	
+	</div>
+	</div>
 
 </body>
 </html>

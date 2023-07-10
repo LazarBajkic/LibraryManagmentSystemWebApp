@@ -12,34 +12,33 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class AddNewAdmin
+ * Servlet implementation class RemoveUser
  */
-public class AddNewAdmin extends HttpServlet {
-
+public class RemoveUser extends HttpServlet {
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String adminID = request.getParameter("newAdminID");
-		String adminUsername = request.getParameter("newAdminName");
-		String startedWorking = request.getParameter("StartedWorking");
-		
+		String deleteUID = request.getParameter("deleteUID");
+		String deleteUname = request.getParameter("deleteUname");
+	
 		try {
-		
+			
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Library","root","Ceramida");
-			PreparedStatement st = con.prepareStatement("Insert into admins values(?,?,?)");
+			PreparedStatement st = con.prepareStatement("Delete from users where ID=? AND Name=?");
+				
+				st.setString(1, deleteUID);
+				st.setString(2, deleteUname);
 			
-				st.setString(1, adminID);
-				st.setString(2, adminUsername);
-				st.setString(3, startedWorking);
-			
-			int execute = st.executeUpdate();
+			int i = st.executeUpdate();
 			
 			RequestDispatcher rd = request.getRequestDispatcher("AdminPage.jsp");
-			rd.forward(request, response);
+			rd.forward(request,response);
 			
 		}catch(Exception e) {
-			
+			e.printStackTrace();
 		}
+		
 	}
 
 }
